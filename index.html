@@ -9,55 +9,55 @@
     <body>
         <p class="text-center text-uppercase">Boutique d'articles informatiques</p>
         <div class="container flex-row">
+             
             <div class="row">
                 <div class="col-2 mx-5">
-                    <h6>Catégories</h6>
+                    <h6 class="">Catégories</h6>
                             <ul class="list-group">
-                                <li class="list-group-item">All</li>
-                                <li class="list-group-item">SmartPhone</li>
-                                <li class="list-group-item">Tablet</li>
+                                <li class="list-group-item"><button onclick="createTable()">All</button></li>
+                                <li class="list-group-item"><a href="#" class="stretched-link text-dark">SmartPhone</a></li>
+                                <li class="list-group-item"><a href="#" class="stretched-link text-dark">Tablet</a></li>
                                 <li class="list-group-item">Pc</li>
                             </ul>
                         
                 </div>
                 <div class="col-5">
                         <h6>Liste des articles en stock</h6>
+                        
                             <table class="table table-striped bg-light border border-success">
                                 <thead>
                                     <tr>
-                                        <th scope="col">ID</th>
-                                        <th scope="col">Name</th>
-                                        <th scope="col">Brand</th>
-                                        <th scope="col">Price</th>
-                                        <th scope="col">Quantity</th>
+                                        <th>ID</th>
+                                        <th>Name</th>
+                                        <th>Brand</th>
+                                        <th>Price</th>
+                                        <th>Quantity</th>
                                    </tr>
                                 </thead>
-                                <tbody>
-                                    <tr>
-                                        <th scope="row">1</th>
-                                        <td>S10</td>
-                                        <td>Samsung</td>
-                                        <td>200</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">2</th>
-                                        <td>Macbook</td>
-                                        <td>Apple</td>
-                                        <td>2000</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">3</th>
-                                        <td>Zenpad</td>
-                                        <td>Asus</td>
-                                        <td>300</td>
-                                    </tr>   
+                                <tbody id="Articles">
+                                    
                                 </tbody>
                             </table>
                         
                 </div>
         <script>
-
-        </script>>
+            function createTable() {
+            const listArticle=new Array();
+            listArticle.push([1, 'S10', 'Samsung', '200']);
+            listArticle.push([2, 'Macbook', 'Apple', '2000']);
+            listArticle.push([3, 'Zenpad', 'Asus', '300']);
+            let tableContents = "";
+            for (let i = 0; i < listArticle.length; i++) {
+                tableContents += "<tr>";
+                for (let j = 0; j < listArticle[i].length; j++) {
+                    tableContents += "<td>" + listArticle[i][j] + "</td>";
+                }
+                tableContents += "</tr>";
+            }
+            document.getElementById("Articles").innerHTML +=tableContents;
+            listArticle.forEach(tableContents => console.log(tableContents));
+            }
+        </script>
         </div>
     </body>
 </html>
