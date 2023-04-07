@@ -14,16 +14,14 @@
                 <div class="col-2 mx-5">
                     <h6 class="">Catégories</h6>
                             <ul class="list-group">
-                                <li class="list-group-item"><button onclick="createTable()">All</button></li>
+                                <li class="list-group-item"><a href="#" class="stretched-link text-dark" onclick="createTable()">All</a></li>
                                 <li class="list-group-item"><a href="#" class="stretched-link text-dark">SmartPhone</a></li>
                                 <li class="list-group-item"><a href="#" class="stretched-link text-dark">Tablet</a></li>
                                 <li class="list-group-item">Pc</li>
-                            </ul>
-                        
+                            </ul>                        
                 </div>
                 <div class="col-5">
-                        <h6>Liste des articles en stock</h6>
-                        
+                        <h6>Liste des articles en stock</h6>                        
                             <table class="table table-striped bg-light border border-success">
                                 <thead>
                                     <tr>
@@ -34,29 +32,12 @@
                                         <th>Quantity</th>
                                    </tr>
                                 </thead>
-                                <tbody id="Articles">
-                                    
+                                <tbody id="Articles">                                    
                                 </tbody>
-                            </table>
-                        
+                            </table>                        
                 </div>
-        <script>
-            function createTable() {
-            const listArticle=new Array();
-            listArticle.push([1, 'S10', 'Samsung', '200']);
-            listArticle.push([2, 'Macbook', 'Apple', '2000']);
-            listArticle.push([3, 'Zenpad', 'Asus', '300']);
-            let tableContents = "";
-            for (let i = 0; i < listArticle.length; i++) {
-                tableContents += "<tr>";
-                for (let j = 0; j < listArticle[i].length; j++) {
-                    tableContents += "<td>" + listArticle[i][j] + "</td>";
-                }
-                tableContents += "</tr>";
-            }
-            document.getElementById("Articles").innerHTML +=tableContents;
-            listArticle.forEach(tableContents => console.log(tableContents));
-            }
+        <script src="./script.js">
+            
         </script>
         </div>
     </body>
