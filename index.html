@@ -7,32 +7,31 @@
         integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">        
     </head>
     <body>
-        <h3 class="text-center text-uppercase text-danger font-weight-bold mb-5">Boutique d'articles informatiques</h3>
+        <h3 class="text-center text-uppercase text-danger font-weight-bold mb-5">Boutique de matériel informatique</h3>
         <div class="container flex-row">             
             <div class="row justify-content-around">
                 <div class="col-2 ">                    
                             <ul class="list-group border border-success"><h5 class="text-center">Catégories</h5>
-                                <li class="list-group-item border-top"><a href="#" class="stretched-link text-dark" onclick="createTable()">All</a></li>
-                                <li class="list-group-item"><a href="#" class="stretched-link text-dark" onclick="displayByCategory()">SmartPhone</a></li>
+                                <li class="list-group-item border-top"><a href="#" class="stretched-link text-dark" onclick="start()">All</a></li>
+                                <li class="list-group-item"><a href="#" class="stretched-link text-dark" onclick="start()">SmartPhone</a></li>
                                 <li class="list-group-item"><a href="#" class="stretched-link text-dark">Tablet</a></li>
                                 <li class="list-group-item"><a href="#" class="stretched-link text-dark">Pc</a></li>
                             </ul>                        
                 </div>
-                <div class="col-5 border border-success rounded">
-                        <h5 class=" text-center">Liste des articles en stock</h5>                        
-                            <table class="table table-striped bg-light border border-success">
+                <div class="col-5 border border-success rounded" style="visibility: hidden" id = "ArticlesTable">
+                        <h5 class=" text-center" >Liste des articles en stock</h5>                        
+                            <table class="table table-striped bg-light border border-success text-center"id="Articles">
                                 <thead class="p-3 mb-2 bg-success text-white" >
-                                    <tr class="text-center">
+                                    <tr>
                                         <th>ID</th>
                                         <th>Name</th>
                                         <th>Brand</th>
                                         <th>Price</th>
                                         <th>Quantity</th>
-                                        <th>Category</th>
                                    </tr>
-                                </thead>
-                                <tbody class="text-center" id="Articles">                                    
-                                </tbody>
+                                </thead> 
+                                <!--<tbody class="text-center">                                    
+                                </tbody>-->
                             </table>                        
                 </div>
         <script src="./script.js">

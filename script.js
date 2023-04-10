@@ -28,16 +28,22 @@ let listArticle=new Array();
     listArticle.push([article5.id, article5.name, article5.brand, article5.price, article5.quantity, article5.category]);
     listArticle.push([article6.id, article6.name, article6.brand, article6.price, article6.quantity, article6.category]);
     listArticle.push([article7.id, article7.name, article7.brand, article7.price, article7.quantity, article7.category]);
-function createTable() {
-    let tableContents = "";
-        for (let i = 0; i < listArticle.length; i++) {
-            row = document.createElement("tr");
-            for (let j = 0; j < listArticle[i].length; j++) {
-                tableContents += "<td>" + listArticle[i][j] + "</td>";
+ function start() {
+    let tbl  = document.getElementById("Articles");    
+   tablebody = document.createElement("tbody");
+    for(let i = 0; i < listArticle.length; i++) {
+       let row = document.createElement("tr");
+        for(let j = 0; j < listArticle[i].length; j++) {
+           let cell = document.createElement("td");
+           let  text = document.createTextNode(listArticle[i][j]);
+            cell.appendChild(text);
+            row.appendChild(cell);
+           if (j == 5) {
+            cell.style.display = "none";
             }
-            tableContents += "</tr>";
         }
-        document.getElementById("Articles").innerHTML +=tableContents;
-        listArticle.forEach(tableContents => console.log(tableContents));
- }
- 
+        tablebody.appendChild(row);
+    }
+    tbl.appendChild(tablebody);
+    document.getElementById("ArticlesTable").style.visibility = "visible";
+}
